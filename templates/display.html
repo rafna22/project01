@@ -1,0 +1,52 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+      <div class="breadcrumb-contentnhy">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <h2 class="hny-title text-center">Contact Us</h2>
+            <ol class="breadcrumb mb-0">
+              <li><a href="/">Home</a>
+                <span class="fa fa-angle-double-right"></span></li>
+              <li class="active">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+</section>
+
+<style>
+  table,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+    margin :40px;
+
+  }
+</style>
+<table>
+  <tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Phone</th>
+
+  </tr>
+
+  {% for x in datas %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.name}}</td>
+    <td>{{x.email}}</td>
+    <td>{{x.password}}</td>
+    <td>{{x.phone}}</td>
+    <td><a href="/update/?regid={{x.id}}"><i class="fa fa-edit"></i></a> </td>
+    <td><a href="/delete/?regid={{x.id}}"><i class="fa fa-trash"></i></a> </td>
+  </tr>
+  {% endfor %}
+    
+
+
+</table>
+{% endblock %}

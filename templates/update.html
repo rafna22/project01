@@ -1,0 +1,61 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+      <div class="breadcrumb-contentnhy">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <h2 class="hny-title text-center">Update Here</h2>
+            <ol class="breadcrumb mb-0">
+              <li><a href="/">Home</a>
+                <span class="fa fa-angle-double-right"></span></li>
+              <li class="active">Update</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+</section>
+ <!-- contacts -->
+ <section class="w3l-contacts-8">
+    <div class="contacts-9 section-gap py-5">
+      <div class="container py-lg-5">
+        <div class="row top-map">
+          <div class="col-lg-6 partners">
+            
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="map-content-9 form-bg-img">
+      <div class="layer section-gap py-5">
+        <div class="container py-lg-5">
+          <div class="form">
+            <h3 class="hny-title two text-center">Fill out the form.</h3>
+            <h4 style="text-align: center ;color: red ">{{error}}</h4>
+            {% for x in data %}
+            <form action="/update/?regid={{x.id}}"class="mt-md-5 mt-4" method="post">
+              {% csrf_token %}
+              <div class="input-grids">
+                <input type="text" name="name" id="w3lName" placeholder="Name" value="{{x.name}}">
+                <input type="email" name="email" id="w3lSender" placeholder="Email" required="" value="{{x.email}}" />
+                <input type="password" name="password" id="w3lSubject" placeholder="Password" required="" value="{{x.password}}">
+                <input type="text" name="phone" id="w3lSubject" placeholder="Phone number" required="" value="{{x.phone}}">
+
+              </div>
+
+              
+                
+              
+              <button type="submit" class="btn">Update</button>
+            </form>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //contacts -->
+
+
+  {% endblock %}

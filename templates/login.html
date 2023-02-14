@@ -1,0 +1,51 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+      <div class="breadcrumb-contentnhy">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <h2 class="hny-title text-center">Login Here</h2>
+            <ol class="breadcrumb mb-0">
+              <li><a href="/">Home</a>
+                <span class="fa fa-angle-double-right"></span></li>
+              <li class="active">Login</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+</section>
+ <!-- contacts -->
+ <section class="w3l-contacts-8">
+    <div class="contacts-9 section-gap py-5">
+     <h4 style="text-align: center ;color: red ">{{error}}</h4>
+    </div>
+    <div class="map-content-9 form-bg-img">
+      <div class="layer section-gap py-5">
+        <div class="container py-lg-5">
+          <div class="form">
+            
+            
+            <form action="/login/"class="mt-md-5 mt-4" method="post">
+              {% csrf_token %}
+              <div class="input-grids">
+                
+                <input type="email" name="email" id="w3lSender" placeholder="Email" required="" />
+                <input type="password" name="password" id="w3lSubject" placeholder="Password" required="">
+               
+
+              </div>
+
+              
+                
+              
+              <button type="submit" class="btn">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //contacts -->
+
+
+  {% endblock %}

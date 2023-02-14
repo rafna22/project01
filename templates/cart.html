@@ -1,0 +1,69 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+      <div class="breadcrumb-contentnhy">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <h2 class="hny-title text-center">Contact Us</h2>
+            <ol class="breadcrumb mb-0">
+              <li><a href="/">Home</a>
+                <span class="fa fa-angle-double-right"></span></li>
+              <li class="active">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+</section>
+
+<style>
+  table,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+    margin :40px;
+
+  }
+</style>
+<table style="width:90%">
+  <tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Price</th>
+    
+
+
+  </tr>
+
+  {% for x in data %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.pid.name}}</td>
+    <td><img src="{{x.pid.image.url}}" width="100" height="100" style="object-fit: contain;"></td>
+    <td>{{x.pid.offer}}</td>
+    
+
+
+
+  </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="4" >Total Amount : {{total}}</td>
+  </tr>
+    
+
+
+</table>
+
+
+<!-- <p style="margin: 50px"> Total Amount : {{total}}</p> -->
+<div style="margin-bottom: 100px;">
+<a href="/" class="read-more btn">
+              Continue Shopping 
+            </a>
+
+<a href="/payment/?gt={{total}}" class="read-more btn" style="float: right;">
+              Make Payment 
+            </a>
+          </div>
+{% endblock %}
